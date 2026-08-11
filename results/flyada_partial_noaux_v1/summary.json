@@ -1,0 +1,13 @@
+{
+  "run_name": "flyada_partial_noaux_v1",
+  "epochs": 25,
+  "wall_time_sec": 1576.110093832016,
+  "n_params_M": 4.015238,
+  "final_eval_n": 30,
+  "final_eval_success_rate": 0.03333333333333333,
+  "final_eval_collision_rate": 0.0,
+  "final_eval_final_dist_mean": 4.672065115471681,
+  "final_eval_ep_length_mean": 395.3333333333333,
+  "final_eval_delta_u2_mean": 0.050916344051559766,
+  "final_eval_return_mean": -168.62167987972626
+}

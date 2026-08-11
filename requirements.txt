@@ -1,0 +1,20 @@
+# Install PyTorch separately to pick the right CUDA / CPU build:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# torch>=2.0
+
+# Core
+numpy>=1.26
+scipy>=1.13
+gymnasium>=1.0
+stable-baselines3>=2.3
+pyyaml>=6.0
+matplotlib>=3.8
+tqdm>=4.66
+einops>=0.8
+
+# Sim-to-sim transfer (Sec. X)
+mujoco>=3.0
+
+# Figure / GIF tooling
+pillow>=10.0

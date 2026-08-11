@@ -1,0 +1,107 @@
+{
+  "nominal": {
+    "vanilla": {
+      "n": 30,
+      "task_success_rate": 0.0,
+      "waypoint_completion_mean": 0.11111111111111112,
+      "all_waypoints_rate": 0.0,
+      "ep_length_mean": 800.0,
+      "cumulative_tracking_error_mean": 2400.7753051757813,
+      "mean_tracking_error_mean": 3.00096914768219,
+      "rmse_tracking_error_mean": 3.1690301020940144,
+      "max_tracking_error_mean": 5.050326093037923
+    },
+    "frame_stack": {
+      "n": 30,
+      "task_success_rate": 0.0,
+      "waypoint_completion_mean": 0.06666666666666667,
+      "all_waypoints_rate": 0.0,
+      "ep_length_mean": 793.5666666666667,
+      "cumulative_tracking_error_mean": 2179.152205403646,
+      "mean_tracking_error_mean": 2.7433526277542115,
+      "rmse_tracking_error_mean": 2.877354947725932,
+      "max_tracking_error_mean": 4.569983013470968
+    },
+    "flyada": {
+      "n": 30,
+      "task_success_rate": 1.0,
+      "waypoint_completion_mean": 1.0,
+      "all_waypoints_rate": 1.0,
+      "ep_length_mean": 220.26666666666668,
+      "cumulative_tracking_error_mean": 450.07704772949216,
+      "mean_tracking_error_mean": 2.0403785626093547,
+      "rmse_tracking_error_mean": 2.3373903314272564,
+      "max_tracking_error_mean": 4.042754848798116
+    }
+  },
+  "hard": {
+    "vanilla": {
+      "n": 30,
+      "task_success_rate": 0.0,
+      "waypoint_completion_mean": 0.02222222222222222,
+      "all_waypoints_rate": 0.0,
+      "ep_length_mean": 772.2666666666667,
+      "cumulative_tracking_error_mean": 2198.9547765096027,
+      "mean_tracking_error_mean": 2.84633154074351,
+      "rmse_tracking_error_mean": 2.997831185658773,
+      "max_tracking_error_mean": 4.65149036248525
+    },
+    "frame_stack": {
+      "n": 30,
+      "task_success_rate": 0.0,
+      "waypoint_completion_mean": 0.06666666666666667,
+      "all_waypoints_rate": 0.0,
+      "ep_length_mean": 787.5,
+      "cumulative_tracking_error_mean": 2297.234167480469,
+      "mean_tracking_error_mean": 2.915213433901469,
+      "rmse_tracking_error_mean": 3.086808713277181,
+      "max_tracking_error_mean": 4.992823203404744
+    },
+    "flyada": {
+      "n": 30,
+      "task_success_rate": 0.9333333333333333,
+      "waypoint_completion_mean": 0.9555555555555555,
+      "all_waypoints_rate": 0.9333333333333333,
+      "ep_length_mean": 306.8333333333333,
+      "cumulative_tracking_error_mean": 584.2292572021485,
+      "mean_tracking_error_mean": 2.017639195919037,
+      "rmse_tracking_error_mean": 2.3224035342534384,
+      "max_tracking_error_mean": 4.074639956156413
+    }
+  },
+  "extreme": {
+    "vanilla": {
+      "n": 30,
+      "task_success_rate": 0.0,
+      "waypoint_completion_mean": 0.0,
+      "all_waypoints_rate": 0.0,
+      "ep_length_mean": 771.0666666666667,
+      "cumulative_tracking_error_mean": 2339.755721028646,
+      "mean_tracking_error_mean": 3.052536050478617,
+      "rmse_tracking_error_mean": 3.2236104726791384,
+      "max_tracking_error_mean": 5.0451810757319135
+    },
+    "frame_stack": {
+      "n": 30,
+      "task_success_rate": 0.0,
+      "waypoint_completion_mean": 0.0,
+      "all_waypoints_rate": 0.0,
+      "ep_length_mean": 783.2666666666667,
+      "cumulative_tracking_error_mean": 2442.978063964844,
+      "mean_tracking_error_mean": 3.1277249018351236,
+      "rmse_tracking_error_mean": 3.295327909787496,
+      "max_tracking_error_mean": 5.099210604031881
+    },
+    "flyada": {
+      "n": 30,
+      "task_success_rate": 0.0,
+      "waypoint_completion_mean": 0.12222222222222222,
+      "all_waypoints_rate": 0.0,
+      "ep_length_mean": 789.5666666666667,
+      "cumulative_tracking_error_mean": 840.4886962890625,
+      "mean_tracking_error_mean": 1.0678645948568979,
+      "rmse_tracking_error_mean": 1.311984610557556,
+      "max_tracking_error_mean": 3.764705848693848
+    }
+  }
+}

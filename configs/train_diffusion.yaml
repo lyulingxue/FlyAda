@@ -1,0 +1,18 @@
+# Vanilla diffusion policy on PPO-teacher demos.
+run_name: diffusion_v1
+env_config: configs/env.yaml
+demos_path: results/ppo_teacher_v2/demos.npz
+
+action_horizon: 8
+diffusion_steps_train: 50
+diffusion_steps_sample: 20
+hidden_dim: 128
+latent_dim: 0            # vanilla has no FlyAda latent
+lr: 1.0e-4
+batch_size: 128
+epochs: 60
+exec_k: 4
+eval_every_epochs: 10
+seed: 0
+device: cuda
+

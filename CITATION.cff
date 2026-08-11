@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this code or build on the paper, please cite as below."
+title: "FlyAda: Belief-State Adaptation for Diffusion Policies under Partial Observation"
+authors:
+  - family-names: "Lyu"
+    given-names: "Lingxue"
+    affiliation: "University of Pennsylvania"
+    email: "lingxuelyu@alumni.upenn.edu"
+year: 2026
+url: "https://github.com/lyulingxue/FlyAda"
+license: MIT
+preferred-citation:
+  type: article
+  title: "FlyAda: Belief-State Adaptation for Diffusion Policies under Partial Observation"
+  authors:
+    - family-names: "Lyu"
+      given-names: "Lingxue"
+  year: 2026

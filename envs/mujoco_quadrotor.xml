@@ -1,0 +1,36 @@
+<mujoco model="flyada_quadrotor">
+  <!-- A minimal 6-DoF quadrotor for sim-to-sim transfer. Mass 1 kg, arm length 0.15 m,
+       4 rotors mapping (thrust, roll/pitch/yaw torque) via the actuator gears. -->
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="RK4" iterations="20"/>
+
+  <default>
+    <geom rgba="0.6 0.6 0.7 1"/>
+    <general ctrlrange="0 6" ctrllimited="true"/>
+  </default>
+
+  <worldbody>
+    <light pos="0 0 5" dir="0 0 -1" diffuse="1 1 1"/>
+    <geom type="plane" size="20 20 0.1" rgba="0.3 0.4 0.3 1"/>
+
+    <body name="quad" pos="0 0 1.0">
+      <freejoint/>
+      <inertial pos="0 0 0" mass="1.0" diaginertia="0.005 0.005 0.009"/>
+      <geom type="box" size="0.18 0.18 0.04" rgba="0.2 0.2 0.25 1"/>
+
+      <site name="rotor_fr" pos=" 0.15  0.15 0.04" size="0.01" rgba="1 0 0 1"/>
+      <site name="rotor_fl" pos="-0.15  0.15 0.04" size="0.01" rgba="0 1 0 1"/>
+      <site name="rotor_rl" pos="-0.15 -0.15 0.04" size="0.01" rgba="0 0 1 1"/>
+      <site name="rotor_rr" pos=" 0.15 -0.15 0.04" size="0.01" rgba="1 1 0 1"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <!-- Each actuator emits a force along the body z-axis at a corner site, plus a
+         small drag-induced yaw torque whose sign alternates to give yaw control via
+         differential rotor speeds. gear: (fx, fy, fz, mx, my, mz). -->
+    <general site="rotor_fr" gear="0 0 1 0 0 -0.02"/>
+    <general site="rotor_fl" gear="0 0 1 0 0  0.02"/>
+    <general site="rotor_rl" gear="0 0 1 0 0 -0.02"/>
+    <general site="rotor_rr" gear="0 0 1 0 0  0.02"/>
+  </actuator>
+</mujoco>

@@ -1,0 +1,41 @@
+# FlyAda — diffusion policy + online latent adaptation.
+run_name: flyada_v1
+env_config: configs/env.yaml
+
+# Two demo sources:
+#   - nominal demos (PPO teacher on nominal dynamics)
+#   - perturbed demos (same teacher under sampled mass/drag/wind/delay)
+# Training samples from both; z_t is rolled along each demo's actual transitions.
+demos_path: results/ppo_teacher_v2/demos.npz
+demos_perturbed_path: results/ppo_teacher_v2/demos_perturbed.npz
+
+# FlyAda-specific
+latent_dim: 16
+alpha: 0.1
+adaptation_hidden: 128
+z_dropout: 0.3           # probability of zeroing z during a training batch
+
+# Shared with diffusion baseline
+action_horizon: 8
+diffusion_steps_train: 50
+diffusion_steps_sample: 20
+hidden_dim: 128
+lr: 1.0e-4
+batch_size: 32
+steps_per_epoch: 400
+train_max_len: 80
+epochs: 25
+exec_k: 4
+eval_every_epochs: 5
+seed: 0
+device: cuda
+
+# Perturbation ranges used by data/collect_perturbed.py to generate demos_perturbed,
+# and at test time by eval/eval_mismatch.py.
+perturb:
+  mass_range: [0.9, 1.3]
+  drag_range: [0.05, 0.25]
+  wind_mag_range: [0.0, 1.0]
+  delay_steps: [0, 3]
+
+

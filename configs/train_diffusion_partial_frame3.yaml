@@ -1,0 +1,20 @@
+# Frame-stacking baseline: same diffusion backbone on partial-obs demos, but
+# policy sees [s_{t-2}, s_{t-1}, s_t] stacked as conditioning. Tests whether a
+# short obs history is enough to recover velocity without a learned latent.
+run_name: diffusion_partial_frame3_v1
+env_config: configs/env_partial.yaml
+demos_path: results/ppo_teacher_v2/demos_partial.npz
+
+action_horizon: 8
+diffusion_steps_train: 50
+diffusion_steps_sample: 20
+hidden_dim: 128
+latent_dim: 0
+frame_stack: 3
+lr: 1.0e-4
+batch_size: 128
+epochs: 30
+exec_k: 4
+eval_every_epochs: 10
+seed: 0
+device: cuda

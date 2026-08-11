@@ -1,0 +1,32 @@
+# Partial-obs version of env.yaml — velocity dims [3,4,5] are zeroed in the
+# returned observation. Used by diffusion / FlyAda policies; the PPO teacher was
+# trained on full obs and still uses configs/env.yaml.
+dt: 0.02
+max_steps: 400
+
+mass: 1.0
+drag: 0.1
+wind: [0.0, 0.0, 0.0]
+control_delay: 0
+action_scale: 5.0
+
+state_dim: 12
+action_dim: 3
+obs_mode: partial
+
+pos_bound: 5.0
+goal_distance_range: [3.0, 7.0]
+success_pos_tol: 0.5
+success_vel_tol: 1.0
+
+num_obstacles_range: [0, 2]
+obstacle_box_half_range: [0.3, 0.7]
+obstacle_cyl_radius_range: [0.3, 0.6]
+obstacle_cyl_height_range: [1.0, 2.5]
+obstacle_clearance: 0.6
+
+reward:
+  dist_coeff: 0.1
+  ctrl_coeff: 0.01
+  collision_penalty: 1.0
+  success_bonus: 100.0

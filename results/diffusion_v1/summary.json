@@ -1,0 +1,13 @@
+{
+  "run_name": "diffusion_v1",
+  "epochs": 30,
+  "wall_time_sec": 194.40538430213928,
+  "n_params_M": 3.981187,
+  "final_eval_n": 30,
+  "final_eval_success_rate": 0.9666666666666667,
+  "final_eval_collision_rate": 0.03333333333333333,
+  "final_eval_final_dist_mean": 0.5012482762336731,
+  "final_eval_ep_length_mean": 77.96666666666667,
+  "final_eval_delta_u2_mean": 0.02016634801402688,
+  "final_eval_return_mean": 74.82164654182083
+}

@@ -1,0 +1,36 @@
+# PPO teacher for Task A (nominal). Stage 1.
+run_name: ppo_teacher_v2
+env_config: configs/env.yaml
+
+# Scaled teacher run. Smoke test used 100k on cuda; this is the real teacher.
+total_timesteps: 3000000
+n_envs: 8
+seed: 0
+device: cpu          # SB3 recommends CPU for MLP-PPO; also easier on RTX 5080 power budget
+
+ppo:
+  learning_rate: 3.0e-4
+  n_steps: 1024           # per env -> rollout size n_steps * n_envs
+  batch_size: 256
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  policy_kwargs:
+    net_arch: [256, 256]
+    activation_fn: tanh
+
+# Eval during training
+eval:
+  n_episodes: 20
+  eval_freq: 25000        # in env steps (per-env clock)
+
+# Expert demo collection (consumed by data/collect_expert.py)
+demo_collection:
+  n_transitions: 50000
+  min_episodes: 200
+  deterministic: true
+  output: demos.npz

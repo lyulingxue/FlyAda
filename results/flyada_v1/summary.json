@@ -1,0 +1,13 @@
+{
+  "run_name": "flyada_v1",
+  "epochs": 25,
+  "wall_time_sec": 547.787505865097,
+  "n_params_M": 4.008979,
+  "final_eval_n": 30,
+  "final_eval_success_rate": 1.0,
+  "final_eval_collision_rate": 0.0,
+  "final_eval_final_dist_mean": 0.32458207830786706,
+  "final_eval_ep_length_mean": 88.43333333333334,
+  "final_eval_delta_u2_mean": 0.045860050121943156,
+  "final_eval_return_mean": 74.23231286823751
+}

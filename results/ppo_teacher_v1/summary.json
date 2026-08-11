@@ -1,0 +1,10 @@
+{
+  "run_name": "ppo_teacher_v1",
+  "total_timesteps": 3000000,
+  "wall_time_sec": 538.1705951690674,
+  "final_eval_episodes": 30,
+  "final_eval_return_mean": -39.16934148855508,
+  "final_eval_return_std": 16.5453912214774,
+  "final_eval_success_rate": 0.03333333333333333,
+  "final_eval_length_mean": 124.76666666666667
+}

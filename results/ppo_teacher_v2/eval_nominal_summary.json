@@ -1,0 +1,12 @@
+{
+  "run_name": "ppo_teacher_v2",
+  "n_seeds": 60,
+  "success_rate": 1.0,
+  "collision_rate": 0.0,
+  "final_dist_mean": 0.3908520077665647,
+  "final_dist_median": 0.42987780272960663,
+  "final_dist_p90": 0.49303160011768343,
+  "episode_length_mean": 78.06666666666666,
+  "episode_length_median_success": 77.5,
+  "return_mean": 78.66901986657003
+}

@@ -1,0 +1,67 @@
+{
+  "condition": {
+    "mass": 1.3,
+    "drag": 0.2,
+    "wind": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "control_delay": 2
+  },
+  "n_seeds": 40,
+  "variants": {
+    "vanilla": {
+      "n": 40,
+      "success_rate": 1.0,
+      "collision_rate": 0.0,
+      "final_dist_mean": 0.38407262079417703,
+      "final_dist_median": 0.43563684821128845,
+      "final_dist_p90": 0.4975693851709366,
+      "final_vel_mean": 0.7894460383802653,
+      "ep_length_mean": 104.5,
+      "return_mean": 73.49413757106609,
+      "delta_u2_mean": 0.017278740112669767,
+      "name": "vanilla"
+    },
+    "flyada_alpha0": {
+      "n": 40,
+      "success_rate": 1.0,
+      "collision_rate": 0.0,
+      "final_dist_mean": 0.4080685626715422,
+      "final_dist_median": 0.46115003526210785,
+      "final_dist_p90": 0.497816663980484,
+      "final_vel_mean": 0.8200588651001454,
+      "ep_length_mean": 108.25,
+      "return_mean": 72.84581378236251,
+      "delta_u2_mean": 0.04106759550049901,
+      "name": "flyada_alpha0"
+    },
+    "flyada_frozen_after_10": {
+      "n": 40,
+      "success_rate": 1.0,
+      "collision_rate": 0.0,
+      "final_dist_mean": 0.4147140894085169,
+      "final_dist_median": 0.4727075546979904,
+      "final_dist_p90": 0.49901028275489806,
+      "final_vel_mean": 0.7507125414907933,
+      "ep_length_mean": 113.325,
+      "return_mean": 72.56275693498354,
+      "delta_u2_mean": 0.03676358461380005,
+      "name": "flyada_frozen_after_10"
+    },
+    "flyada_full": {
+      "n": 40,
+      "success_rate": 0.95,
+      "collision_rate": 0.0,
+      "final_dist_mean": 0.3989558844827116,
+      "final_dist_median": 0.42853325605392456,
+      "final_dist_p90": 0.4973531782627106,
+      "final_vel_mean": 0.8741458937525749,
+      "ep_length_mean": 123.575,
+      "return_mean": 66.72360345697822,
+      "delta_u2_mean": 0.03896967368200421,
+      "name": "flyada_full"
+    }
+  }
+}

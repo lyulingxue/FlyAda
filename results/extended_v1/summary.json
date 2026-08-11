@@ -1,0 +1,233 @@
+{
+  "extrap_mismatch": {
+    "mass+50": {
+      "axis": "mass",
+      "level": 0.5,
+      "vanilla": {
+        "success": 0.0,
+        "final_d": 2.452751284837723,
+        "ep_length": 398.95
+      },
+      "frame_stack": {
+        "success": 0.0,
+        "final_d": 2.6825848281383515,
+        "ep_length": 380.25
+      },
+      "flyada": {
+        "success": 1.0,
+        "final_d": 0.30811895355582236,
+        "ep_length": 99.55
+      }
+    },
+    "mass+100": {
+      "axis": "mass",
+      "level": 1.0,
+      "vanilla": {
+        "success": 0.0,
+        "final_d": 2.997105133533478,
+        "ep_length": 377.35
+      },
+      "frame_stack": {
+        "success": 0.05,
+        "final_d": 2.3907069377601147,
+        "ep_length": 374.0
+      },
+      "flyada": {
+        "success": 1.0,
+        "final_d": 0.2982646394520998,
+        "ep_length": 120.35
+      }
+    },
+    "drag+200": {
+      "axis": "drag",
+      "level": 2.0,
+      "vanilla": {
+        "success": 0.0,
+        "final_d": 2.4799125671386717,
+        "ep_length": 383.3
+      },
+      "frame_stack": {
+        "success": 0.0,
+        "final_d": 2.6557772755622864,
+        "ep_length": 386.85
+      },
+      "flyada": {
+        "success": 1.0,
+        "final_d": 0.4721894934773445,
+        "ep_length": 86.7
+      }
+    },
+    "wind=2.0": {
+      "axis": "wind",
+      "level": 2.0,
+      "vanilla": {
+        "success": 0.0,
+        "final_d": 3.759112763404846,
+        "ep_length": 400.0
+      },
+      "frame_stack": {
+        "success": 0.0,
+        "final_d": 3.4757137537002563,
+        "ep_length": 399.75
+      },
+      "flyada": {
+        "success": 0.95,
+        "final_d": 0.48990912437438966,
+        "ep_length": 151.05
+      }
+    },
+    "wind=3.0": {
+      "axis": "wind",
+      "level": 3.0,
+      "vanilla": {
+        "success": 0.0,
+        "final_d": 3.4628324061632156,
+        "ep_length": 396.05
+      },
+      "frame_stack": {
+        "success": 0.0,
+        "final_d": 3.9287744581699373,
+        "ep_length": 400.0
+      },
+      "flyada": {
+        "success": 0.0,
+        "final_d": 0.689862209558487,
+        "ep_length": 400.0
+      }
+    },
+    "delay=5": {
+      "axis": "delay",
+      "level": 5.0,
+      "vanilla": {
+        "success": 0.0,
+        "final_d": 5.4283528327941895,
+        "ep_length": 388.0
+      },
+      "frame_stack": {
+        "success": 0.05,
+        "final_d": 5.218777838349342,
+        "ep_length": 383.6
+      },
+      "flyada": {
+        "success": 1.0,
+        "final_d": 0.2595207132399082,
+        "ep_length": 105.45
+      }
+    }
+  },
+  "ablation_harder": {
+    "condition": {
+      "mass": 1.5,
+      "drag": 0.4,
+      "wind": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "control_delay": 4
+    },
+    "n_seeds": 40,
+    "variants": {
+      "vanilla": {
+        "n": 40.0,
+        "success_rate": 0.0,
+        "collision_rate": 0.025,
+        "final_dist_mean": 2.91305433511734,
+        "final_dist_median": 2.736907124519348,
+        "final_dist_p90": 4.193914747238159,
+        "final_vel_mean": 0.0,
+        "ep_length_mean": 398.35,
+        "return_mean": -156.13236818631518,
+        "delta_u2_mean": 0.13194112973287703
+      },
+      "frame_stack": {
+        "n": 40.0,
+        "success_rate": 0.0,
+        "collision_rate": 0.0,
+        "final_dist_mean": 3.0604991734027864,
+        "final_dist_median": 3.021992564201355,
+        "final_dist_p90": 4.029257917404175,
+        "final_vel_mean": 0.0,
+        "ep_length_mean": 400.0,
+        "return_mean": -158.4471972707162,
+        "delta_u2_mean": 0.11378531167283654
+      },
+      "flyada_alpha0": {
+        "n": 40.0,
+        "success_rate": 0.05,
+        "collision_rate": 0.0,
+        "final_dist_mean": 1.5982881672680378,
+        "final_dist_median": 1.5331382751464844,
+        "final_dist_p90": 2.565165400505066,
+        "final_vel_mean": 0.0,
+        "ep_length_mean": 390.375,
+        "return_mean": -128.81417421773577,
+        "delta_u2_mean": 0.03255961136892438
+      },
+      "flyada_frozen10": {
+        "n": 40.0,
+        "success_rate": 0.025,
+        "collision_rate": 0.0,
+        "final_dist_mean": 3.6110897958278656,
+        "final_dist_median": 3.3389352560043335,
+        "final_dist_p90": 6.22826590538025,
+        "final_vel_mean": 0.0,
+        "ep_length_mean": 398.975,
+        "return_mean": -194.4404725459429,
+        "delta_u2_mean": 0.07207248210906983
+      },
+      "flyada_full": {
+        "n": 40.0,
+        "success_rate": 0.1,
+        "collision_rate": 0.0,
+        "final_dist_mean": 0.6778300255537033,
+        "final_dist_median": 0.6943338513374329,
+        "final_dist_p90": 0.7593289434909821,
+        "final_vel_mean": 0.0,
+        "ep_length_mean": 378.825,
+        "return_mean": -47.23190231712072,
+        "delta_u2_mean": 0.026680218800902367
+      }
+    }
+  },
+  "taskB_extreme": {
+    "condition": {
+      "mass": 1.5,
+      "drag": 0.4,
+      "wind": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "control_delay": 4
+    },
+    "n_seeds": 30,
+    "vanilla": {
+      "n": 30.0,
+      "task_success_rate": 0.0,
+      "waypoint_completion_mean": 0.0,
+      "all_waypoints_rate": 0.0,
+      "ep_length_mean": 746.0,
+      "cumulative_tracking_error_mean": 2278.5013173421225,
+      "mean_tracking_error_mean": 3.0777789910634357
+    },
+    "frame_stack": {
+      "n": 30.0,
+      "task_success_rate": 0.0,
+      "waypoint_completion_mean": 0.0,
+      "all_waypoints_rate": 0.0,
+      "ep_length_mean": 774.0666666666667,
+      "cumulative_tracking_error_mean": 2386.4681315104167,
+      "mean_tracking_error_mean": 3.0904125610987347
+    },
+    "flyada": {
+      "n": 30.0,
+      "task_success_rate": 0.03333333333333333,
+      "waypoint_completion_mean": 0.14444444444444443,
+      "all_waypoints_rate": 0.03333333333333333,
+      "ep_length_mean": 766.6666666666666,
+      "cumulative_tracking_error_mean": 822.2223388671875,
+      "mean_tracking_error_mean": 1.1076379636923472
+    }
+  }
+}

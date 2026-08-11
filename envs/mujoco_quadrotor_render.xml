@@ -1,0 +1,114 @@
+<mujoco model="flyada_quadrotor_render">
+  <!-- Presentation-quality copy of mujoco_quadrotor.xml.
+
+       PHYSICS IS UNCHANGED. The <option>, the <inertial> element, the four rotor
+       sites and the four actuators are byte-identical to the physics model. The
+       body carries an explicit <inertial>, so MuJoCo does not infer mass or
+       inertia from geoms — every geom added below is cosmetic, and all of them
+       are contype/conaffinity 0 so they never collide.
+
+       Added purely for rendering: arms, rotor discs, a nose marker, a textured
+       floor and skybox, and a mocap body that marks the current goal. A mocap
+       body has no joints, so nq/nv are unchanged too.
+
+       envs/_render_parity_check.py asserts identical rollouts against the
+       physics model. -->
+
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="RK4" iterations="20"/>
+
+  <visual>
+    <!-- Bright, low-contrast lighting: this is rendered for a projector, where
+         a dark scene with a hot specular highlight reads as mud. -->
+    <headlight ambient="0.72 0.72 0.75" diffuse="0.62 0.62 0.62"
+               specular="0.12 0.12 0.12"/>
+    <quality shadowsize="4096" offsamples="8"/>
+    <map znear="0.02" zfar="60" shadowclip="8"/>
+  </visual>
+
+  <asset>
+    <texture name="sky" type="skybox" builtin="gradient"
+             rgb1="0.55 0.70 0.90" rgb2="0.97 0.98 1.00" width="512" height="512"/>
+    <texture name="grid" type="2d" builtin="checker"
+             rgb1="0.90 0.91 0.94" rgb2="0.98 0.98 0.99" width="512" height="512"/>
+    <material name="floor" texture="grid" texrepeat="14 14" reflectance="0.0"
+              specular="0.05" shininess="0.05"/>
+    <material name="hull"   rgba="0.18 0.20 0.24 1" specular="0.35" shininess="0.4"/>
+    <material name="arm"    rgba="0.92 0.41 0.20 1" specular="0.25" shininess="0.3"/>
+    <material name="rotor"  rgba="0.16 0.42 0.80 0.50" specular="0.3" shininess="0.4"/>
+    <material name="nose"   rgba="0.98 0.78 0.10 1" specular="0.3"/>
+  </asset>
+
+  <default>
+    <geom rgba="0.6 0.6 0.7 1"/>
+    <general ctrlrange="0 6" ctrllimited="true"/>
+    <!-- Every cosmetic geom inherits this class: no collision, no mass. -->
+    <default class="deco">
+      <geom contype="0" conaffinity="0" mass="0" density="0" group="1"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <!-- One soft directional light, aimed so the shadow falls away from camera. -->
+    <light pos="6 -8 12" dir="-0.4 0.55 -1" directional="true"
+           diffuse="0.35 0.35 0.35" specular="0.05 0.05 0.05" castshadow="true"/>
+    <geom type="plane" size="20 20 0.1" material="floor"/>
+
+    <body name="goalmarker" mocap="true" pos="0 0 1.5">
+      <geom class="deco" type="sphere" size="0.30" rgba="1.00 0.76 0.06 0.30"/>
+      <geom class="deco" type="sphere" size="0.13" rgba="0.98 0.64 0.02 1.0"/>
+    </body>
+
+    <body name="quad" pos="0 0 1.0">
+      <freejoint/>
+      <inertial pos="0 0 0" mass="1.0" diaginertia="0.005 0.005 0.009"/>
+      <!-- The collision box, byte-identical to the physics model except that it
+           is drawn fully transparent (the cosmetic hull below stands in for it).
+           Do NOT set contype/conaffinity here: without this geom the vehicle
+           falls straight through the floor, which is a physics change, not a
+           rendering one. _render_parity_check.py drops the body onto the ground
+           specifically to catch that. -->
+      <geom type="box" size="0.18 0.18 0.04" rgba="0 0 0 0"/>
+
+      <!-- cosmetic airframe -->
+      <geom class="deco" type="box" size="0.115 0.115 0.035" material="hull"/>
+      <geom class="deco" type="box" pos="0.135 0 0.008" size="0.055 0.028 0.018"
+            material="nose"/>
+      <geom class="deco" type="capsule" fromto="0 0 0.005  0.15  0.15 0.03"
+            size="0.014" material="arm"/>
+      <geom class="deco" type="capsule" fromto="0 0 0.005 -0.15  0.15 0.03"
+            size="0.014" material="arm"/>
+      <geom class="deco" type="capsule" fromto="0 0 0.005 -0.15 -0.15 0.03"
+            size="0.014" material="arm"/>
+      <geom class="deco" type="capsule" fromto="0 0 0.005  0.15 -0.15 0.03"
+            size="0.014" material="arm"/>
+      <geom class="deco" type="cylinder" pos=" 0.15  0.15 0.042" size="0.095 0.004"
+            material="rotor"/>
+      <geom class="deco" type="cylinder" pos="-0.15  0.15 0.042" size="0.095 0.004"
+            material="rotor"/>
+      <geom class="deco" type="cylinder" pos="-0.15 -0.15 0.042" size="0.095 0.004"
+            material="rotor"/>
+      <geom class="deco" type="cylinder" pos=" 0.15 -0.15 0.042" size="0.095 0.004"
+            material="rotor"/>
+      <geom class="deco" type="cylinder" pos=" 0.15  0.15 0.032" size="0.016 0.012"
+            material="hull"/>
+      <geom class="deco" type="cylinder" pos="-0.15  0.15 0.032" size="0.016 0.012"
+            material="hull"/>
+      <geom class="deco" type="cylinder" pos="-0.15 -0.15 0.032" size="0.016 0.012"
+            material="hull"/>
+      <geom class="deco" type="cylinder" pos=" 0.15 -0.15 0.032" size="0.016 0.012"
+            material="hull"/>
+
+      <site name="rotor_fr" pos=" 0.15  0.15 0.04" size="0.01" rgba="1 0 0 1"/>
+      <site name="rotor_fl" pos="-0.15  0.15 0.04" size="0.01" rgba="0 1 0 1"/>
+      <site name="rotor_rl" pos="-0.15 -0.15 0.04" size="0.01" rgba="0 0 1 1"/>
+      <site name="rotor_rr" pos=" 0.15 -0.15 0.04" size="0.01" rgba="1 1 0 1"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general site="rotor_fr" gear="0 0 1 0 0 -0.02"/>
+    <general site="rotor_fl" gear="0 0 1 0 0  0.02"/>
+    <general site="rotor_rl" gear="0 0 1 0 0 -0.02"/>
+    <general site="rotor_rr" gear="0 0 1 0 0  0.02"/>
+  </actuator>
+</mujoco>

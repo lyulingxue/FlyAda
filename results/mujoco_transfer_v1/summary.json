@@ -1,0 +1,48 @@
+{
+  "nominal": {
+    "vanilla": {
+      "n": 20,
+      "success_rate": 0.0,
+      "final_dist_mean": 8.755359303951263,
+      "final_dist_p90": 15.860964202880862,
+      "ep_length_mean": 400.0
+    },
+    "frame_stack": {
+      "n": 20,
+      "success_rate": 0.0,
+      "final_dist_mean": 7.530630612373352,
+      "final_dist_p90": 11.99193372726441,
+      "ep_length_mean": 400.0
+    },
+    "flyada": {
+      "n": 20,
+      "success_rate": 0.4,
+      "final_dist_mean": 2.166298207640648,
+      "final_dist_p90": 4.127236866950993,
+      "ep_length_mean": 277.85
+    }
+  },
+  "hard": {
+    "vanilla": {
+      "n": 20,
+      "success_rate": 0.0,
+      "final_dist_mean": 2.7905546605587004,
+      "final_dist_p90": 4.3292531967163095,
+      "ep_length_mean": 400.0
+    },
+    "frame_stack": {
+      "n": 20,
+      "success_rate": 0.0,
+      "final_dist_mean": 3.046542799472809,
+      "final_dist_p90": 4.383462190628052,
+      "ep_length_mean": 400.0
+    },
+    "flyada": {
+      "n": 20,
+      "success_rate": 0.85,
+      "final_dist_mean": 0.647551865875721,
+      "final_dist_p90": 1.8290089130401612,
+      "ep_length_mean": 148.85
+    }
+  }
+}

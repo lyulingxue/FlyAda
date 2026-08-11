@@ -1,0 +1,13 @@
+{
+  "run_name": "diffusion_partial_frame3_v1",
+  "epochs": 30,
+  "wall_time_sec": 468.6370780467987,
+  "n_params_M": 3.987331,
+  "final_eval_n": 30,
+  "final_eval_success_rate": 0.0,
+  "final_eval_collision_rate": 0.03333333333333333,
+  "final_eval_final_dist_mean": 3.1953372756640115,
+  "final_eval_ep_length_mean": 387.9,
+  "final_eval_delta_u2_mean": 0.13231137512872618,
+  "final_eval_return_mean": -123.57365923295818
+}

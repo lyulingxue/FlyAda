@@ -1,0 +1,10 @@
+run_name: ppo_teacher_v2
+env_config: configs/env.yaml
+model_path: results/ppo_teacher_v2/ppo_teacher.zip
+device: cuda
+
+nominal:
+  n_seeds: 60
+  deterministic: true
+  max_steps: 400
+  plot_n_trajectories: 3

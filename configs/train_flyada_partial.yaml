@@ -1,0 +1,40 @@
+# FlyAda trained on partial-obs demos. f_phi must reconstruct dynamics info
+# from (partial_state, action, next_partial_state) transitions. This is the
+# regime where online latent adaptation should actually help.
+run_name: flyada_partial_v1
+env_config: configs/env_partial.yaml
+# Use *full-obs* demos. train_flyada masks velocity at f_phi's input but keeps
+# the true velocity as an auxiliary supervision target (vel_aux_coeff).
+demos_path: results/ppo_teacher_v2/demos.npz
+demos_perturbed_path: results/ppo_teacher_v2/demos_perturbed.npz
+partial_obs: true
+
+latent_dim: 32
+alpha: 0.3
+update_mode: ema
+adaptation_hidden: 128
+# z-dropout conflicts with vel_aux: one pushes "ignore z" while the other pushes
+# "encode velocity in z". Under partial obs the policy genuinely needs z, so drop
+# the dropout and lean on the aux loss to regularize z instead.
+z_dropout: 0.0
+vel_aux_coeff: 5.0
+
+action_horizon: 8
+diffusion_steps_train: 50
+diffusion_steps_sample: 20
+hidden_dim: 128
+lr: 1.0e-4
+batch_size: 32
+steps_per_epoch: 400
+train_max_len: 80
+epochs: 25
+exec_k: 4
+eval_every_epochs: 5
+seed: 0
+device: cuda
+
+perturb:
+  mass_range: [0.9, 1.3]
+  drag_range: [0.05, 0.25]
+  wind_mag_range: [0.0, 1.0]
+  delay_steps: [0, 3]

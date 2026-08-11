@@ -1,0 +1,23 @@
+{
+  "n_pairs": 10479,
+  "linear_probe_R2_overall": 0.9919487791898632,
+  "linear_probe_R2_per_axis": [
+    0.9919324766327965,
+    0.9907870341256675,
+    0.9928001206954967
+  ],
+  "condition_classifier_acc": 0.2424435252943048,
+  "condition_classifier_chance": 0.2,
+  "pca_explained_var": [
+    0.2928379476070404,
+    0.23332557082176208
+  ],
+  "smoothness_per_cond": {
+    "nominal": 0.12092571301958362,
+    "mass+30%": 0.10403059003153822,
+    "drag+100%": 0.11667606332323105,
+    "wind=1.0": 0.11677377622162431,
+    "delay=2": 0.12204515629251289
+  },
+  "smoothness_overall": 0.11579899523718082
+}

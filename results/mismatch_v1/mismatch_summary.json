@@ -1,0 +1,55 @@
+{
+  "n_seeds_per_condition": 30,
+  "vanilla_mean_success": 1.0,
+  "flyada_mean_success": 0.9638888888888889,
+  "per_condition": {
+    "nominal": {
+      "vanilla": 1.0,
+      "flyada": 0.9666666666666667
+    },
+    "mass+10": {
+      "vanilla": 1.0,
+      "flyada": 1.0
+    },
+    "mass+20": {
+      "vanilla": 1.0,
+      "flyada": 1.0
+    },
+    "mass+30": {
+      "vanilla": 1.0,
+      "flyada": 1.0
+    },
+    "drag+50": {
+      "vanilla": 1.0,
+      "flyada": 0.9666666666666667
+    },
+    "drag+100": {
+      "vanilla": 1.0,
+      "flyada": 0.9666666666666667
+    },
+    "wind_x=0.5": {
+      "vanilla": 1.0,
+      "flyada": 0.9666666666666667
+    },
+    "wind_x=1.0": {
+      "vanilla": 1.0,
+      "flyada": 0.9
+    },
+    "wind_x=1.5": {
+      "vanilla": 1.0,
+      "flyada": 0.9
+    },
+    "delay=1": {
+      "vanilla": 1.0,
+      "flyada": 1.0
+    },
+    "delay=2": {
+      "vanilla": 1.0,
+      "flyada": 0.9333333333333333
+    },
+    "delay=3": {
+      "vanilla": 1.0,
+      "flyada": 0.9666666666666667
+    }
+  }
+}
